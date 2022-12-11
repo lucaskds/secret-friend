@@ -41,7 +41,7 @@ def send_emails(secret_list):
             sender = f"Amigo Secreto <{SENDER_EMAIL}>"
             receiver = f"{result[0].name} <{result[0].email}>"
 
-            message = f"Subject: Seu amigo secreto!\nTo: {receiver}\nFrom: {sender}\n\nSeu amigo secreto: {secret_friend.name}."
+            message = f"Subject: Seu amigo secreto!\nTo: {receiver}\nFrom: {sender}\n\nOi {result[0].name}! Seu amigo secreto: {secret_friend.name}."
             server.sendmail(sender, receiver, message)
 
 
