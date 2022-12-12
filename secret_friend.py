@@ -1,7 +1,10 @@
-from dotenv import load_dotenv
-
-import os, random, smtplib
+import os
+import random
+import smtplib
 from collections import namedtuple
+from time import sleep
+
+from dotenv import load_dotenv
 
 load_dotenv()
 
@@ -43,6 +46,7 @@ def send_emails(secret_list):
 
             message = f"Subject: Seu amigo secreto!\nTo: {receiver}\nFrom: {sender}\n\nOi {result[0].name}! Seu amigo secreto: {secret_friend.name}."
             server.sendmail(sender, receiver, message)
+            sleep(5)
 
 
 secret_list = generate_list(participants, participants_count)
